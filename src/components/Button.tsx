@@ -1,6 +1,5 @@
-import Link, { type LinkProps } from 'next/link';
-import type { ReactNode } from 'react';
-
+import Link, { type LinkProps } from "next/link";
+import type { ReactNode } from "react";
 
 type ButtonProps = LinkProps & {
   children: ReactNode;
@@ -8,17 +7,14 @@ type ButtonProps = LinkProps & {
   className?: string;
 };
 
-
-export function Button({ icon, children, href, className}: ButtonProps) {
+export function Button({ icon, children, href, className }: ButtonProps) {
   return (
-    <div>
-      <Link
+    <Link
       href={href}
-      className={`flex items-center gap-3 ${className ?? ''}`}
-      >
+      className={`flex items-center gap-3 ${className ?? ""}`}
+    >
       {icon}
       {children}
-      </Link>
-    </div>
+    </Link>
   );
 }

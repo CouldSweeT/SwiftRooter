@@ -45,7 +45,7 @@ export function ContactForm() {
   };
 
   return (
-    <section className="relative w-full">
+    <section id="contact" className="relative w-full">
       <div className="mx-auto w-full max-w-7xl">
         <div className="rounded-2xl bg-white/95 p-4 shadow-lg shadow-zinc-900/10 ring-1 ring-zinc-200/70 backdrop-blur-sm md:p-5">
           {isSubmitted ? (

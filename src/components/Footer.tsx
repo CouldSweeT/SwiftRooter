@@ -1,17 +1,10 @@
 import Link from "next/link";
 
-const exploreLinks = [
-  { label: "Home", href: "/" },
-  { label: "Location", href: "#" },
-  { label: "Services", href: "#" },
-  { label: "FAQ", href: "#" },
-];
-
-const companyLinks = [
-  { label: "About Us", href: "#" },
-  { label: "Contact Us", href: "#" },
-  { label: "Privacy Policy", href: "#" },
-];
+import {
+  footerCompanyLinks,
+  footerExploreLinks,
+  type NavigationLink,
+} from "@/lib/data/navigation";
 
 const socialLinks = [
   { label: "X", href: "#", icon: "x" },
@@ -35,8 +28,8 @@ export function Footer() {
             </p>
           </div>
 
-          <FooterLinks title="Explore" links={exploreLinks} />
-          <FooterLinks title="Company" links={companyLinks} />
+          <FooterLinks title="Explore" links={footerExploreLinks} />
+          <FooterLinks title="Company" links={footerCompanyLinks} />
 
           <div>
             <h2 className="text-lg font-semibold text-zinc-950">Get in Touch</h2>
@@ -111,10 +104,7 @@ export function Footer() {
 
 type FooterLinksProps = {
   title: string;
-  links: {
-    label: string;
-    href: string;
-  }[];
+  links: NavigationLink[];
 };
 
 function FooterLinks({ title, links }: FooterLinksProps) {

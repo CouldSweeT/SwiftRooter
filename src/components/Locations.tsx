@@ -3,7 +3,7 @@ import { LocationCard } from "@/components/LocationCard";
 
 export function Locations() {
   return (
-    <section className="w-full bg-white py-16 md:py-24">
+    <section id="locations" className="w-full bg-white py-16 md:py-24">
       <div className="mx-auto max-w-3xl text-center">
         <p className="mb-4 inline-flex items-center gap-2 rounded-full border border-zinc-200 bg-zinc-50 px-3 py-1 text-sm font-medium text-zinc-700">
           <svg

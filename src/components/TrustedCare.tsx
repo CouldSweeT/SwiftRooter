@@ -21,6 +21,7 @@ const trustImages = [
 export function TrustedCare() {
   return (
     <section
+      id="about"
       className="overflow-hidden rounded-lg bg-primary px-2 py-4 text-white sm:rounded-[32px] sm:px-10 md:px-14 md:py-14"
       style={{
         backgroundImage:

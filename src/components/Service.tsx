@@ -33,10 +33,23 @@ export function Service() {
   };
 
   return (
-    <section className="w-full rounded-[32px] bg-white py-8 md:py-12">
+    <section id="services" className="w-full rounded-[32px] bg-white py-8 md:py-12">
       <div className="mb-8 flex flex-col gap-5 md:flex-row md:items-start md:justify-between">
         <div>
-          <p className="mb-3 inline-flex rounded-full border border-zinc-200 bg-white px-3 py-1 text-sm text-zinc-600">
+          <p className="mb-3 inline-flex items-center gap-2 rounded-full border border-zinc-200 bg-white px-3 py-1 text-sm text-zinc-600">
+            <svg
+              aria-hidden="true"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.8"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="h-4 w-4 text-zinc-500"
+            >
+              <path d="M12 14a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z" />
+              <path d="M4 21a8 8 0 0 1 16 0" />
+            </svg>
             Services
           </p>
           <h2 className="text-3xl font-semibold tracking-tight text-zinc-950 md:text-5xl">
@@ -92,7 +105,7 @@ export function Service() {
                 </p>
               </div>
 
-              <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-zinc-50 text-lg text-zinc-950 ring-1 ring-zinc-200">
+              <span className="flex h-9 w-9 sh  rink-0 items-center justify-center rounded-full bg-zinc-50 text-lg text-zinc-950 ring-1 ring-zinc-200">
                 ↗
               </span>
             </div>

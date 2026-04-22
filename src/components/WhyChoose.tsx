@@ -1,7 +1,5 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
-
 import { reasons, type ReasonIcon } from "@/lib/data/reasons";
 
 const reasonIcons: Record<ReasonIcon, React.ReactNode> = {
@@ -20,45 +18,25 @@ const reasonIcons: Record<ReasonIcon, React.ReactNode> = {
 };
 
 export function WhyChoose() {
-  const sectionRef = useRef<HTMLElement | null>(null);
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    const section = sectionRef.current;
-
-    if (!section) {
-      return;
-    }
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-          observer.disconnect();
-        }
-      },
-      { threshold: 0.2 },
-    );
-
-    observer.observe(section);
-
-    return () => observer.disconnect();
-  }, []);
-
   return (
     <section
-      ref={sectionRef}
       className="grid w-full gap-8 rounded-[32px] bg-white px-6 py-8 md:grid-cols-[1fr_1.1fr] md:px-10 md:py-12 lg:gap-16"
     >
       <div className="md:sticky md:top-24 md:self-start">
-        <div
-          className={[
-            "transition-all duration-700 ease-out",
-            isVisible ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0",
-          ].join(" ")}
-        >
+        <div>
           <p className="mb-4 inline-flex items-center gap-2 rounded-full border border-zinc-200 bg-zinc-50 px-3 py-1 text-sm font-medium text-zinc-600">
-            <span className="h-2 w-2 rounded-full bg-primary" />
+            <svg
+              aria-hidden="true"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="h-4 w-4 text-zinc-500"
+            >
+              <path d="M12 3.75 14.1 9l5.15.5-3.9 3.45 1.2 5.3L12 15.45l-4.55 2.8 1.2-5.3L4.75 9.5 9.9 9 12 3.75Z" />
+            </svg>
             Why Choose
           </p>
           <h2 className="max-w-xl text-3xl font-semibold tracking-tight text-zinc-950 md:text-5xl">
@@ -76,17 +54,7 @@ export function WhyChoose() {
         {reasons.map((reason) => (
           <article
             key={reason.title}
-            className={[
-              "flex gap-4 rounded-3xl border border-zinc-100 bg-zinc-50/70 p-5 shadow-sm transition-all duration-700 ease-out hover:-translate-y-1 hover:bg-white hover:shadow-md",
-              isVisible
-                ? "translate-y-0 opacity-100"
-                : "translate-y-10 opacity-0",
-            ].join(" ")}
-            style={{
-              transitionDelay: isVisible
-                ? `${120 + reasons.indexOf(reason) * 80}ms`
-                : "0ms",
-            }}
+            className="flex gap-4 rounded-3xl border border-zinc-100 bg-zinc-50/70 p-5 shadow-sm transition-all duration-700 ease-out hover:-translate-y-1 hover:bg-white hover:shadow-md"
           >
             <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-blue-50 text-primary ring-1 ring-blue-100">
               <svg
