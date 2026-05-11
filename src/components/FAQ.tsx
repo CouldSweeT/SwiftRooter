@@ -132,7 +132,7 @@ function HelpCard({ className }: { className?: string }) {
         assist!
       </p>
       <Link
-        href="#contact"
+        href="/contact-us"
         className="mt-6 inline-flex h-11 items-center justify-center gap-2 rounded-xl bg-primary px-5 text-sm font-semibold text-white transition hover:bg-blue-500"
       >
         <svg

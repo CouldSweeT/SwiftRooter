@@ -4,11 +4,11 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import {
-  contactFormSchema,
-  type ContactFormValues,
-} from "@/lib/schemas/contact-form.schema";
+  requestCallFormSchema,
+  type RequestCallFormValues,
+} from "@/lib/schemas/request-call-form.schema";
 
-export function ContactForm() {
+export function RequestCallForm() {
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   const {
@@ -16,8 +16,8 @@ export function ContactForm() {
     handleSubmit,
     formState: { errors, isSubmitting },
     reset,
-  } = useForm<ContactFormValues>({
-    resolver: zodResolver(contactFormSchema),
+  } = useForm<RequestCallFormValues>({
+    resolver: zodResolver(requestCallFormSchema),
     defaultValues: {
       name: "",
       email: "",
@@ -27,7 +27,7 @@ export function ContactForm() {
     mode: "onBlur",
   });
 
-  const onSubmit = async (values: ContactFormValues) => {
+  const onSubmit = async (values: RequestCallFormValues) => {
     const response = await fetch("/api/contact", {
       method: "POST",
       headers: {
@@ -37,7 +37,7 @@ export function ContactForm() {
     });
 
     if (!response.ok) {
-      throw new Error("Не удалось отправить форму");
+      throw new Error("Could not send the request");
     }
 
     setIsSubmitted(true);
@@ -54,7 +54,7 @@ export function ContactForm() {
                 Vielen Dank! Ihre Anfrage wurde gesendet.
               </h3>
               <p className="mt-2 text-sm text-zinc-600">
-                Wir melden uns in Kürze bei Ihnen.
+                Wir melden uns in Kuerze bei Ihnen.
               </p>
             </div>
           ) : (
@@ -161,9 +161,7 @@ function Field({ label, htmlFor, error, children }: FieldProps) {
         {label}
       </label>
       {children}
-      <div className="mt-1 min-h-[16px]">
-        {error ? <p className="text-xs text-red-600">{error}</p> : null}
-      </div>
+      {error ? <p className="mt-1 text-xs text-red-600">{error}</p> : null}
     </div>
   );
 }

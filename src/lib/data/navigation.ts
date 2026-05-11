@@ -5,9 +5,9 @@ export type NavigationLink = {
 
 export const mainNavigationLinks: NavigationLink[] = [
   { href: "/", label: "Home" },
-  { href: "/", label: "Services" },
-  { href: "/", label: "About us" },
-  { href: "/", label: "Contact Us" },
+  { href: "/services", label: "Services" },
+  { href: "/about-us", label: "About us" },
+  { href: "/contact-us", label: "Contact Us" },
 ];
 
 export const footerExploreLinks: NavigationLink[] = [
@@ -18,7 +18,7 @@ export const footerExploreLinks: NavigationLink[] = [
 ];
 
 export const footerCompanyLinks: NavigationLink[] = [
-  { label: "About Us", href: "/" },
-  { label: "Contact Us", href: "/" },
-  { label: "Privacy Policy", href: "/" },
+  { label: "About Us", href: "/about-us" },
+  { label: "Contact Us", href: "/contact-us" },
+  { label: "Privacy Policy", href: "/privacy-policy" },
 ];

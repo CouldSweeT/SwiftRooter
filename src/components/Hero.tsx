@@ -1,7 +1,7 @@
 import Image from "next/image";
 
-import { ContactForm } from "@/components/ContactForm";
 import { Membership } from "@/components/Membership";
+import { RequestCallForm } from "@/components/RequestCallForm";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { Container } from "@/components/ui/Container";
 
@@ -43,7 +43,7 @@ export function Hero() {
         </div>
 
         <div className="mt-auto w-full">
-          <ContactForm />
+          <RequestCallForm />
         </div>
       </Container>
     </section>
